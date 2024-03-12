@@ -1,5 +1,6 @@
 import './App.css'
 import Gallery from './Components/Gallery'
+import { useState } from 'react';
 
 function App() {
   const pics = [
@@ -83,10 +84,19 @@ function App() {
       url: "https://unsplash.com/photos/V0yAek6BgGk",
       download_url: "https://picsum.photos/id/29/4000/2670"
     }
-  ]
+  ];
+  const [recherche,rechercher] = useState('');
+  const handeChange = (event) =>{
+    rechercher(event.target.value);
+  }
+ 
+
 
   return (
     <div>
+      <label htmlFor='rechercher'>Rechercher : </label>
+      <input id="rechercher" type='text' onChange={handeChange}></input>
+      <p>Terme recherché : {recherche}</p>
       <Gallery param={pics}/>
     </div>
   );
