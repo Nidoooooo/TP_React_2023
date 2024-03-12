@@ -1,6 +1,8 @@
-function Photo() {
+function Photo(props) {
     return(
-      <img src="https://picsum.photos/id/1/200"></img> 
+      <div>
+        <img src={`https://picsum.photos/id/${props.param.id}/${props.param.size.width}/${props.param.size.height}`} alt="Photo"></img>
+      </div>
     );
 }
 

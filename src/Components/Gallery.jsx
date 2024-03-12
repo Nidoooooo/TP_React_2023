@@ -1,12 +1,15 @@
 import Photo from "./Photo";
 
-function Gallery() {
+function Gallery(props) {
+  
     return(
-        <section>
+        
+        <div>
           <h1>Galerie de photos</h1>
-          <Photo />
-          <Photo />
-        </section>
+          <Photo param={props.param[0]} />
+          <Photo param={props.param[1]} />
+          <Photo param={props.param[2]} />
+        </div>
     );
 }
 export default Gallery
