@@ -1,9 +1,17 @@
 function Photo(props) {
     return(
-      <div>
-        <h3>{props.param.author} (#{props.param.id})</h3>
-        <img src={`https://picsum.photos/id/${props.param.id}/${props.param.width}/${props.param.height}`} alt="Photo"></img>
-      </div>
+      <section>
+      {
+        props.param.map((item)=>{
+          return(
+            <div>
+              <h3>{item.author} (#{item.id})</h3>
+              <img src={`https://picsum.photos/id/${item.id}/${item.width}/${item.height}`} alt="Photo"></img>
+            </div>
+          )
+        })
+      }
+      </section>
     );
 }
 
